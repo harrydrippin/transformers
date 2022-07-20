@@ -476,6 +476,7 @@ class Message:
                     )
 
                     blocks = self.get_reply_blocks(job, job_result, failures, device, text=text)
+                    print(blocks)
 
                     print("Sending the following reply")
                     print(json.dumps({"blocks": blocks}))
