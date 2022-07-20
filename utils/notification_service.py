@@ -614,7 +614,7 @@ def prepare_reports(title, header, reports, to_truncate=True):
         # keep some room for adding "[Truncated]" when necessary
 
         for idx in range(len(reports)):
-            _report = header + "\n".join(reports[:idx])
+            _report = header + "\n".join(reports[:idx + 1])
             new_report = f"{title}:\n```\n{_report}\n```\n"
             if len(new_report) > MAX_ERROR_TEXT:
                 # `report` here has length <= 3000
@@ -622,6 +622,10 @@ def prepare_reports(title, header, reports, to_truncate=True):
                 break
             report = new_report
 
+    print(title)
+    print(header)
+    print(reports)
+    print(report)
     return report
 
 
