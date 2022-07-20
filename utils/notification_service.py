@@ -298,6 +298,7 @@ class Message:
 
         model_header = "Single PT |  Multi PT | Single TF |  Multi TF |     Other | Category\n"
         sorted_model_reports = sorted(model_reports, key=lambda s: s.split("] ")[-1])
+        print(sorted_model_reports)
         model_failures_report = prepare_reports(
             title="These following model modules had failures", header=model_header, reports=sorted_model_reports
         )
